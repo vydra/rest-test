@@ -1,0 +1,22 @@
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.10.1'
+    compile 'org.scalatest:scalatest_2.10:2.0.M5b'
+    compile 'com.stormpath.sdk:stormpath-sdk-api:0.7.0'
+    compile 'com.stormpath.sdk:stormpath-sdk-httpclient:0.7.0'
+    compile 'com.jayway.restassured:rest-assured:1.7.2'
+    compile 'com.typesafe:config:1.0.0'
+}
+
+tasks.withType(ScalaCompile) {
+    configure(scalaCompileOptions.forkOptions) {
+        memoryMaximumSize = '2g'
+        jvmArgs = ['-XX:MaxPermSize=1024m']
+    }
+}
