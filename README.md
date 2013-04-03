@@ -4,7 +4,7 @@ rest-test
 Exploratory project to learn how to test RESTful Web Services
 using Scala, ScalaTest, and rest-assured.
 
-rest-assure is here: https://code.google.com/p/rest-assured/
+rest-assured is here: https://code.google.com/p/rest-assured/
 
 We are using stormpath.com API as system under test.
 
