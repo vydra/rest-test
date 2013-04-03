@@ -6,7 +6,7 @@ import com.stormpath.sdk.client._
 
 class ClientSpec extends FlatSpec with ShouldMatchers {
   
-  val conf = Config.conf
+  val conf = TestConfig.conf
   val client =  ClientRef.client
    
   "Client" should "have current tenant" in {

@@ -5,12 +5,12 @@ import org.scalatest.FlatSpec
 import com.testdriven.stormpath.fixtures._
 
 class TenantSpec extends FlatSpec with ShouldMatchers {
-  val conf = Config.conf
+  val conf = TestConfig.conf
   
   "Current tenant" should "have" in {
     val currentTenant = ClientRef.client.getCurrentTenant 
     assert(currentTenant != null)
-    assert(currentTenant.getHref === conf.getString("currentTenant.href"))
-    assert(currentTenant.getName === conf.getString("currentTenant.name"))
+    assert(currentTenant.getHref === TestConfig.tenantHref)
+    assert(currentTenant.getName === TestConfig.tenantName)
   }
 }

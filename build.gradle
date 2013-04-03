@@ -10,7 +10,8 @@ dependencies {
     compile 'org.scalatest:scalatest_2.10:2.0.M5b'
     compile 'com.stormpath.sdk:stormpath-sdk-api:0.7.0'
     compile 'com.stormpath.sdk:stormpath-sdk-httpclient:0.7.0'
-    compile 'com.jayway.restassured:rest-assured:1.7.2'
+    compile 'com.jayway.restassured:rest-assured:1.8.0'
+    compile 'com.jayway.restassured:json-path:1.8.0'
     compile 'com.typesafe:config:1.0.0'
 }
 

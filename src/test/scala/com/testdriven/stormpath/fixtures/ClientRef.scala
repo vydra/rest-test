@@ -4,5 +4,5 @@ import com.stormpath.sdk.client.Client
 import com.stormpath.sdk.client.ClientBuilder
 
 object ClientRef {
-   val client : Client = new ClientBuilder().setApiKeyFileLocation(Config.apiKeyPath).build()
+   val client : Client = new ClientBuilder().setApiKeyFileLocation(TestConfig.apiKeyPath).build()
 }
