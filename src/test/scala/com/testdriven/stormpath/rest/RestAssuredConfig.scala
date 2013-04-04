@@ -4,7 +4,7 @@ import com.jayway.restassured.RestAssured
 import com.jayway.restassured.RestAssured._
 import com.testdriven.stormpath.fixtures.TestConfig
 
-trait RestSpec {
+trait RestAssuredConfig {
   
   val username = TestConfig.apiKeyConf.getString("apiKey.id")
   val password = TestConfig.apiKeyConf.getString("apiKey.secret")
