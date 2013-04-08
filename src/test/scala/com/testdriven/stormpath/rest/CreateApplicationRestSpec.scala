@@ -9,7 +9,7 @@ import com.jayway.restassured.RestAssured
 import com.testdriven.stormpath.fixtures.TestConfig
 import scala.util.Random
 
-class CreateApplicationRestSpec extends RestAssuredConfig with FlatSpec with ShouldMatchers {
+class CreateApplicationRestSpec extends MyRestAssuredConfig with FlatSpec with ShouldMatchers {
   /*
    * POST https://api.stormpath.com/v1/applications
   Content-Type: application/json
