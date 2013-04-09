@@ -4,7 +4,7 @@ import org.scalatest.Suites
 import com.testdriven.stormpath._
 import org.scalatest.BeforeAndAfter
 
-class AllSuites extends Suites  (
+class AllSuites extends Suites (
   new ClientRestSpec,
   new CreateApplicationRestSpec,
   /*Java SDK Tests*/

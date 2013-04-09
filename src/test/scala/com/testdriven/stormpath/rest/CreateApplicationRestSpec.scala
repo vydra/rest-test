@@ -61,7 +61,7 @@ class CreateApplicationRestSpec extends MyRestAssuredConfig with FlatSpec with S
                  """).
     expect().
          statusCode(500).
-          body("code", equalTo( 500 )).
+         body("code", equalTo( 500 )).
     when().
          post("/applications")
   }
@@ -74,6 +74,7 @@ class CreateApplicationRestSpec extends MyRestAssuredConfig with FlatSpec with S
                 "status", "enabled").
     expect().
          statusCode(400).
+         body("code", equalTo( 400 )).
     when().
          post("/applications")
   }
