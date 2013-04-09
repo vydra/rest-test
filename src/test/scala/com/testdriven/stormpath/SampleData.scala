@@ -1,17 +1,18 @@
 package com.testdriven.stormpath
 
-import scala.collection.convert.WrapAsScala._
-
+import scala.collection.convert.WrapAsScala.asScalaIterator
+import com.stormpath.sdk.application.Application
 import com.stormpath.sdk.client.DefaultApiKey
-import com.stormpath.sdk.application._
 import com.stormpath.sdk.impl.ds.DefaultDataStore
 import com.stormpath.sdk.impl.http.httpclient.HttpClientRequestExecutor
-import com.testdriven.stormpath.fixtures.ClientRef
 import com.testdriven.stormpath.rest.MyRestAssuredConfig
+import com.stormpath.sdk.client.Client
+import com.stormpath.sdk.client.ClientBuilder
+import com.testdriven.stormpath.fixtures.TestConfig
 
 object SampleData extends MyRestAssuredConfig {
 
-  val currentTenant = ClientRef.client.getCurrentTenant
+  def currentTenant = ClientRef.client.getCurrentTenant
 
   def load() {
 
@@ -27,10 +28,8 @@ object SampleData extends MyRestAssuredConfig {
     val ds = new DefaultDataStore(reqExec)
 
     val apps = currentTenant.getApplications().iterator.toList.
-      //filter( _.getName != "Stormpath")
       filterNot(List("Stormpath", "TestAppOne") contains _.getName)
-    apps.foreach { ds.delete(_) }
-
+      apps.foreach { ds.delete(_) }
   }
 
   def main(args: Array[String]) {

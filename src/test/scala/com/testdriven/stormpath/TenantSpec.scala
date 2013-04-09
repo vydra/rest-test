@@ -3,6 +3,7 @@ package com.testdriven.stormpath
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FlatSpec
 import com.testdriven.stormpath.fixtures._
+import com.testdriven.stormpath.ClientRef
 
 class TenantSpec extends FlatSpec with ShouldMatchers {
   val conf = TestConfig.conf
