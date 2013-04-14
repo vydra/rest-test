@@ -12,11 +12,11 @@ import com.testdriven.stormpath.fixtures.TestConfig
 
 object SampleData extends MyRestAssuredConfig {
 
-  def currentTenant = ClientRef.client.getCurrentTenant
+  def currentTenant() = ClientRef.newClient.getCurrentTenant
 
   def load() {
 
-    val application = ClientRef.client.getDataStore().instantiate(classOf[Application])
+    val application = ClientRef.newClient.getDataStore().instantiate(classOf[Application])
     application.setName("TestAppOne")
     application.setDescription("Test Application")
 

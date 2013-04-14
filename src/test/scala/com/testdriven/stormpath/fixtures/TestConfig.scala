@@ -9,6 +9,6 @@ object TestConfig {
     val conf = ConfigFactory.parseFile( new File(stormPath + "/test-application.conf"))
     val apiKeyConf = ConfigFactory.parseFile( new File(apiKeyPath))
     
-    def tenantHref = conf.getString("currentTenant.href")
-    def tenantName = conf.getString("currentTenant.name")
+    val tenantHref = conf.getString("currentTenant.href")
+    val tenantName = conf.getString("currentTenant.name")
 }
