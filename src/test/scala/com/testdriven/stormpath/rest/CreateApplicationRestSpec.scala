@@ -22,7 +22,7 @@ class CreateApplicationRestSpec extends MyRestAssuredConfig with FlatSpec with S
    */
   
   //Note: application name must be unique
-  "creating and application" should "return 201" in {
+  "creating an application" should "return 201" in {
     val appName = "App" +  new Random().nextInt
     given().
          body("""{
@@ -36,7 +36,7 @@ class CreateApplicationRestSpec extends MyRestAssuredConfig with FlatSpec with S
          post("/applications")
   }
   
-  "creating and application" should "return 409" in {
+  "creating a duplicate application" should "return 409" in {
     val appName = "Stormpath"
     given().
          body("""{
@@ -51,7 +51,7 @@ class CreateApplicationRestSpec extends MyRestAssuredConfig with FlatSpec with S
          post("/applications")
   }
   
-  "creating and application with malformed req body" should "return 500. Really?" in {
+  "creating an application with malformed req body" should "return 500. Really?" in {
     val appName = "Stormpath"
     given().
          body("""
@@ -66,7 +66,7 @@ class CreateApplicationRestSpec extends MyRestAssuredConfig with FlatSpec with S
          post("/applications")
   }
   
-  "creating and application with params instead of request body w/Json" should "return 400" in {
+  "creating an application with params instead of request body w/Json" should "return 400" in {
     val appName = "Stormpath"
     given().
          params("name", appName,
