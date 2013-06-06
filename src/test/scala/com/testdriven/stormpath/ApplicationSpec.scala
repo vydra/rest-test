@@ -4,7 +4,7 @@ import scala.collection.JavaConversions.asScalaIterator
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.ShouldMatchers
 import com.stormpath.sdk.application.Application
-import com.testdriven.stormpath.fixtures.CommonFixture
+import com.testdriven.stormpath.fixtures.TestConfig
 
 class ApplicationSpec extends BaseSpec {
 
@@ -33,5 +33,6 @@ class ApplicationSpec extends BaseSpec {
       currentTenant.createApplication(application)
     } should produce[com.stormpath.sdk.resource.ResourceException]
   }
+  
   
 }
